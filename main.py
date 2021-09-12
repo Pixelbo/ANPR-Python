@@ -25,6 +25,7 @@ while (True):
         x, y, w, h = cv2.boundingRect(c)
         ratio = w / h
         area = w*h
+        
         if area > 100 and area < 2000 and ratio<=0.7 and ratio >=0.4:
             img = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
             cv2.putText(frame, str(round(ratio,2)),(x,y), cv2.FONT_HERSHEY_SIMPLEX, 1 , (255,0,0))
